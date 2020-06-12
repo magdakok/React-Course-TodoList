@@ -4,7 +4,7 @@ class Todo extends Component {
     render(){
         return (
             <div className="Todo">
-                <div className="Todo__text">{this.props.text}</div><button>X</button>
+                <div className="Todo__text">{this.props.todo}</div><button>X</button>
             </div>
         )
     }
