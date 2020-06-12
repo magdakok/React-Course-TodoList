@@ -2,3 +2,12 @@
     display: flex;
     justify-content: space-between;
 }
+
+.Todo__text {
+    cursor: pointer;
+}
+
+.Todo__text-done {
+    text-decoration: line-through;
+    color: grey;
+}

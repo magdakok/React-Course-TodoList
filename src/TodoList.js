@@ -13,12 +13,26 @@ class TodoList extends Component {
         }
         this.addTodo = this.addTodo.bind(this);
         this.removeTodo = this.removeTodo.bind(this);
+        this.markCompleted = this.markCompleted.bind(this);
     }
 
     addTodo(todo){
         let newTodo = {...todo, isDone: false, id: uuidv4()}
         this.setState(st=>({
             todos: [newTodo, ...st.todos]
+        }))
+    }
+
+    markCompleted(itemCompleted){
+    let newTodoList = this.state.todos.map(td =>{
+            if (td.id === itemCompleted){
+                return {...td, isDone: !td.isDone}
+            } else {
+                return {...td}
+            }
+        });
+        this.setState(st =>({
+            todos: [...newTodoList]
         }))
     }
 
@@ -38,7 +52,7 @@ class TodoList extends Component {
                 <h1>TodoList</h1>
                 <TodoForm addTodo={this.addTodo}/>
                 {this.state.todos.map(todo =>(
-                    <Todo todo={todo.todo} isDone={todo.isDone} key={todo.id} id={todo.id} removeTodo={this.removeTodo} />
+                    <Todo todo={todo.todo} isDone={todo.isDone} key={todo.id} id={todo.id} removeTodo={this.removeTodo} markCompleted={this.markCompleted} />
                 ))}
             </div>
         )
