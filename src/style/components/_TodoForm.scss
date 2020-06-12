@@ -1,0 +1,16 @@
+.TodoForm__form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+
+input {
+    background-color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+}

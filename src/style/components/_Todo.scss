@@ -1,13 +1,18 @@
 .Todo {
     display: flex;
     justify-content: space-between;
+    align-content: center;
+    margin-top: 1rem;
 }
 
 .Todo__text {
     cursor: pointer;
+    text-align: left;
+    word-break: break-all;
+    margin-right: auto;
 }
 
 .Todo__text-done {
     text-decoration: line-through;
-    color: grey;
+    color: $color-gray;
 }
