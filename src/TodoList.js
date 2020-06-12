@@ -11,6 +11,7 @@ class TodoList extends Component {
         {todo: 'buy bread', isDone: false , id: uuidv4() }
             ]
         }
+        this.renderTodos = this.renderTodos.bind(this);
         this.addTodo = this.addTodo.bind(this);
         this.removeTodo = this.removeTodo.bind(this);
         this.markCompleted = this.markCompleted.bind(this);
@@ -46,14 +47,20 @@ class TodoList extends Component {
         }))
     }
 
+    renderTodos(){
+        return(
+            this.state.todos.map(todo =>(
+                <Todo todo={todo.todo} isDone={todo.isDone} key={todo.id} id={todo.id} removeTodo={this.removeTodo} markCompleted={this.markCompleted} />
+            ))
+        )
+    }
+
     render(){
         return (
             <div className="TodoList">
                 <h1>TodoList</h1>
                 <TodoForm addTodo={this.addTodo}/>
-                {this.state.todos.map(todo =>(
-                    <Todo todo={todo.todo} isDone={todo.isDone} key={todo.id} id={todo.id} removeTodo={this.removeTodo} markCompleted={this.markCompleted} />
-                ))}
+                {this.state.todos[0] ? this.renderTodos() : 'Add your first todo!'}
             </div>
         )
     }
