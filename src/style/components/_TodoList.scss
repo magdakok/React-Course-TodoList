@@ -6,3 +6,18 @@
     border-radius: 3px;
     padding: 2rem;
 }
+
+button {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    align-self: center;
+    margin-left: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        border: 1px solid $color-primary;
+    }
+}

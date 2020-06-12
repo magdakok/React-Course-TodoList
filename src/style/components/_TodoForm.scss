@@ -7,10 +7,14 @@
 
 input {
     background-color: white;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 2rem;
     padding: 1rem;
     font-family: inherit;
     font-size: inherit;
     width: 100%;
+
+    &:focus {
+        border: 1px solid $color-primary;
+    }
 }
