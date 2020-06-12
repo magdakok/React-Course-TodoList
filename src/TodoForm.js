@@ -24,7 +24,7 @@ class TodoForm extends Component {
         return (
             <div className="TodoForm">
                 <form className="TodoForm__form" onSubmit={this.handleSubmit}>
-                    <input name="todo" value={this.state.todo} onChange={this.handleChange} autofocus="true"/>
+                    <input name="todo" value={this.state.todo} onChange={this.handleChange} autoFocus={true}/>
                     <button>ADD</button>
                 </form>
             </div>
