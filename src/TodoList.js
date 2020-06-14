@@ -7,9 +7,7 @@ class TodoList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            todos: [
-        {todo: 'buy bread', isDone: false , id: uuidv4() }
-            ]
+            todos: []
         }
         this.renderTodos = this.renderTodos.bind(this);
         this.addTodo = this.addTodo.bind(this);
@@ -37,13 +35,9 @@ class TodoList extends Component {
         }))
     }
 
-    removeTodo(itemToRemove){
-  
-        let newTodoList = this.state.todos.filter(td =>{
-            return (td.id !== itemToRemove)
-        });
+    removeTodo(id) {
         this.setState(st =>({
-            todos: [...newTodoList]
+            todos: st.todos.filter(t =>(t.id !== id ))
         }))
     }
 
